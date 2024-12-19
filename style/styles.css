@@ -1,0 +1,424 @@
+/* Styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f2a365; 
+  --secondary-color: #ffffff; 
+  --loader-color: #111;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--loader-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  animation: fadeOut 2s forwards; 
+  animation-delay: 3s; 
+}
+
+#loader h1 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+.sablier {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  height: 80px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  position: relative;
+  background: linear-gradient(#f2a365 30px, transparent 0) no-repeat;
+  background-size: 2px 40px;
+  background-position: 50% 0px;
+  animation: spinx 3s linear infinite;
+}
+.sablier:before, .sablier:after {
+  content: "";
+  width: 40px;
+  left: 50%;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  transform: translatex(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 0 0 20px 20px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0px;
+  animation: lqt 3s linear infinite;
+}
+.sablier:after {
+  top: auto;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  animation: lqb 3s linear infinite;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #111; /* Fond noir */
+  color: #fff; /* Texte blanc */
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111; /* Gris foncé pour l'header */
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-family: 'Playfair Display', serif;
+  color: #f2a365; /* Orange */
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  font-family: 'Playfair Display', serif;
+  color: #f2a365;
+  text-decoration: none;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff; /* Blanc au survol */
+}
+
+/* Section Hero avec une grande image de fond */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(main.jpg) center/cover no-repeat;
+  background-size: cover;
+  padding: 0 10%;
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  color: #f2a365; /* Orange */
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  color: #fff; /* Texte en blanc */
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Nav-banner */
+.nav-banner {
+  background-color: #111;
+  padding: 10px 0;
+  text-align: center;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-banner ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-banner ul li {
+  margin: 0 20px;
+}
+
+.nav-banner ul li a {
+  font-family: 'Playfair Display', serif;
+  color: #f2a365;
+  text-decoration: none;
+  font-size: 1.5em; /* Texte plus gros */
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative; /* Nécessaire pour l'effet de soulignement */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animation fluide */
+}
+
+/* Effet hover inspiré de uiverse.io */
+.nav-banner ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #f2a365;
+  transform: scaleX(0); /* Ligne invisible au départ */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-banner ul li a:hover::after {
+  transform: scaleX(1); /* Ligne visible au survol */
+  transform-origin: bottom left;
+}
+
+.nav-banner ul li a:hover {
+  color: #fff; /* Couleur blanche au survol */
+  transform: scale(1.1); /* Légère augmentation de la taille */
+}
+
+/* Sections alternées : Texte et image côte à côte */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  background-color: #111; /* Fond noir */
+  margin-top: 50px;
+}
+
+.section .text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.section .text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: #f2a365; /* Orange */
+  margin-bottom: 15px;
+}
+
+
+.section .text p {
+  font-size: 1.1em;
+  color: #ccc; /* Gris clair pour le texte */
+  line-height: 1.8;
+}
+
+.section img {
+  flex: 1;
+  width: 60%; /* Agrandir l'image en ajustant sa largeur */
+  height: auto; /* Maintenir la proportion de l'image */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section img:hover {
+  transform: scale(1.05); /* Légère animation plus importante sur l'image */
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse; /* Inverse l'ordre du texte et de l'image sur les sections paires */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111; /* Fond noir */
+  color: #f2a365; /* Texte orange */
+  margin-top: 50px;
+}
+
+/* Styles pour tablettes (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin-left: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 3em; /* Réduction du titre */
+  }
+
+  .hero-content p {
+    font-size: 1em; /* Réduction du texte */
+  }
+
+  .section {
+    flex-direction: column; /* Empiler texte et image */
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+
+  .section .text h2 {
+    font-size: 2.5em;
+  }
+
+  .section .text p {
+    font-size: 1em;
+  }
+
+  footer {
+    font-size: 0.9em;
+  }
+}
+
+/* Styles pour téléphones (max-width: 425px) */
+@media (max-width: 425px) {
+  header {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 1.2em; /* Réduction de la taille du logo */
+    text-align: center;
+  }
+
+  nav ul {
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 1em; /* Réduction des liens */
+  }
+
+  .nav-banner ul li a {
+    flex-wrap: nowrap;
+    font-size: 1em;
+  }
+
+  .hero {
+    height: 70vh; /* Réduction de la hauteur pour les petits écrans */
+    padding: 0 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2em; /* Réduction du titre principal */
+  }
+
+  .hero-content p {
+    font-size: 0.9em; /* Réduction du texte */
+  }
+
+  .section {
+    flex-direction: column; /* Texte et image empilés */
+    padding: 30px 5%;
+  }
+
+
+  .section .text h2 {
+    font-size: 2em;
+  }
+
+  .section .text p {
+    font-size: 0.9em;
+  }
+
+  .nav-banner ul {
+    flex-direction: column; /* Menu en colonne */
+  }
+
+  .nav-banner ul li {
+    margin: 10px 0;
+  }
+
+  footer {
+    font-size: 0.8em;
+    padding: 15px;
+  }
+}
+
+
+
+@keyframes fadeOut {
+  0% {opacity: 1;visibility: visible;}
+  100% {opacity: 0;visibility: hidden;} 
+} 
+
+@keyframes lqt {
+  0%, 100% {
+    background-image: linear-gradient(#f2a365 40px, transparent 0);
+    background-position: 0% 0px;
+  }
+  50% {
+    background-image: linear-gradient(#f2a365 40px, transparent 0);
+    background-position: 0% 40px;
+  }
+  50.1% {
+    background-image: linear-gradient(#f2a365 40px, transparent 0);
+    background-position: 0% -40px;
+  }
+}
+@keyframes lqb {
+  0% {
+    background-image: linear-gradient(#f2a365 40px, transparent 0);
+    background-position: 0 40px;
+  }
+  100% {
+    background-image: linear-gradient(#f2a365 40px, transparent 0);
+    background-position: 0 -40px;
+  }
+}
+@keyframes spinx {
+  0%, 49% {
+    transform: rotate(0deg);
+    background-position: 50% 36px;
+  }
+  51%, 98% {
+    transform: rotate(180deg);
+    background-position: 50% 4px;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 50% 36px;
+  }
+}
