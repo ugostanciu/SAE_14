@@ -42,4 +42,4 @@ Le fichier CSS principal qui définit l'apparence du site. Il utilise des animat
 
 ## Hébergement
 
-Voici le lien de mon site : 
+Voici le lien de mon site : https://ugostanciu.github.io/SAE_14/
