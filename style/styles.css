@@ -1,4 +1,4 @@
-/* Styles de base */
+
 * {
   margin: 0;
   padding: 0;
@@ -81,7 +81,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111; /* Gris foncé pour l'header */
+  background: #111; 
   padding: 20px 30px;
   position: sticky;
   top: 0;
@@ -91,8 +91,17 @@ header {
 .logo {
   font-size: 1.8em;
   font-family: 'Playfair Display', serif;
-  color: #f2a365; /* Orange */
+  color: #f2a365; 
   text-transform: uppercase;
+}
+
+div p {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #ffffff;
 }
 
 nav ul {
@@ -203,11 +212,11 @@ nav ul li a:hover {
   font-size: 1.5em; 
   font-weight: bold;
   letter-spacing: 1px;
-  position: relative; /* Nécessaire pour l'effet de soulignement */
-  transition: transform 0.3s ease, color 0.3s ease; /* Animation fluide */
+  position: relative; 
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-/* Effet hover inspiré de uiverse.io */
+
 .nav-banner ul li a::after {
   content: '';
   position: absolute;
@@ -216,22 +225,22 @@ nav ul li a:hover {
   bottom: 0;
   left: 0;
   background-color: #f2a365;
-  transform: scaleX(0); /* Ligne invisible au départ */
+  transform: scaleX(0); 
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
 
 .nav-banner ul li a:hover::after {
-  transform: scaleX(1); /* Ligne visible au survol */
+  transform: scaleX(1); 
   transform-origin: bottom left;
 }
 
 .nav-banner ul li a:hover {
-  color: #fff; /* Couleur blanche au survol */
-  transform: scale(1.1); /* Légère augmentation de la taille */
+  color: #fff; 
+  transform: scale(1.1); 
 }
 
-/* Sections alternées : Texte et image côte à côte */
+
 .section {
   display: flex;
   align-items: center;
@@ -250,28 +259,28 @@ nav ul li a:hover {
 .section .text h2 {
   font-family: 'Playfair Display', serif;
   font-size: 4em;
-  color: #f2a365; /* Orange */
+  color: #f2a365; 
   margin-bottom: 15px;
 }
 
 .section .text h3 {
   font-family: 'Playfair Display', serif;
   font-size: 2em;
-  color: #f2a365; /* Orange */
+  color: #f2a365; 
   margin-bottom: 15px;
 }
 
 
 .section .text p {
   font-size: 1.1em;
-  color: #ccc; /* Gris clair pour le texte */
+  color: #ccc; 
   line-height: 1.8;
 }
 
 .section img {
   flex: 1;
-  max-width: 400px; /* Agrandir l'image en ajustant sa largeur */
-  max-height: auto; /* Maintenir la proportion de l'image */
+  max-width: 400px; 
+  max-height: auto; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -290,19 +299,19 @@ nav ul li a:hover {
 }
 
 .section:nth-child(even) {
-  flex-direction: row-reverse; /* Inverse l'ordre du texte et de l'image sur les sections paires */
+  flex-direction: row-reverse; 
 }
 
-/* Footer */
+
 footer {
   text-align: center;
   padding: 20px;
-  background: #111; /* Fond noir */
-  color: #f2a365; /* Texte orange */
+  background: #111; 
+  color: #f2a365; 
   margin-top: 50px;
 }
 
-/* Styles pour tablettes (max-width: 768px) */
+
 @media (max-width: 768px) {
   header {
     flex-wrap: wrap;
@@ -324,11 +333,11 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: 3em; /* Réduction du titre */
+    font-size: 3em; 
   }
 
   .hero-content p {
-    font-size: 1em; /* Réduction du texte */
+    font-size: 1em; 
   }
 
   .section img {
@@ -336,7 +345,7 @@ footer {
   }
 
   .section {
-    flex-direction: column; /* Empiler texte et image */
+    flex-direction: column; 
     flex-wrap: wrap;
     text-align: center;
   }
@@ -365,15 +374,19 @@ footer {
   }
 }
 
-/* Styles pour téléphones (max-width: 425px) */
+
 @media (max-width: 425px) {
   header {
     align-items: center;
     padding: 10px;
   }
 
+  nav ul li a{
+    font-size: 0.9em;
+  }
+
   .logo {
-    font-size: 1.2em; /* Réduction de la taille du logo */
+    font-size: 1.2em; 
     text-align: center;
   }
 
@@ -387,7 +400,7 @@ footer {
   }
 
   nav ul li a {
-    font-size: 1em; /* Réduction des liens */
+    font-size: 1em; 
   }
 
   .nav-banner ul li a {
@@ -396,20 +409,20 @@ footer {
   }
 
   .hero {
-    height: 70vh; /* Réduction de la hauteur pour les petits écrans */
+    height: 70vh; 
     padding: 0 5%;
   }
 
   .hero-content h1 {
-    font-size: 2em; /* Réduction du titre principal */
+    font-size: 2em; 
   }
 
   .hero-content p {
-    font-size: 0.9em; /* Réduction du texte */
+    font-size: 0.9em;
   }
 
   .section {
-    flex-direction: column; /* Texte et image empilés */
+    flex-direction: column; 
     padding: 30px 5%;
   }
 
@@ -423,8 +436,7 @@ footer {
   }
 
   .nav-banner ul {
-    flex-direction: column; /* Menu en colonne */
-  }
+    flex-direction: column; 
 
   .nav-banner ul li {
     margin: 10px 0;
