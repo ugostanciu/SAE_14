@@ -70,7 +70,7 @@
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Playfair Display', serif;
   background-color: #111; /* Fond noir */
   color: #fff; /* Texte blanc */
   line-height: 1.6;
@@ -129,7 +129,7 @@ nav ul li a:hover {
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 1000px;
   text-align: center;
 }
 
@@ -142,9 +142,7 @@ nav ul li a:hover {
 
 .hero-content p {
   font-size: 1.2em;
-  color: #fff; /* Texte en blanc */
-  line-height: 1.8;
-  margin-bottom: 30px;
+  color: #ffffff; /* Texte en blanc */
 }
 
 /* Nav-banner */
@@ -219,7 +217,14 @@ nav ul li a:hover {
 
 .section .text h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3em;
+  font-size: 4em;
+  color: #f2a365; /* Orange */
+  margin-bottom: 15px;
+}
+
+.section .text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
   color: #f2a365; /* Orange */
   margin-bottom: 15px;
 }
@@ -233,15 +238,23 @@ nav ul li a:hover {
 
 .section img {
   flex: 1;
-  width: 60%; /* Agrandir l'image en ajustant sa largeur */
-  height: auto; /* Maintenir la proportion de l'image */
+  max-width: 400px; /* Agrandir l'image en ajustant sa largeur */
+  max-height: auto; /* Maintenir la proportion de l'image */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
+
+
 .section img:hover {
-  transform: scale(1.05); /* Légère animation plus importante sur l'image */
+  transform: scale(1.05); 
+}
+
+.section figcaption {
+  font-size: 0.8em;
+  max-width: 400px;
+  color: #ccc; 
 }
 
 .section:nth-child(even) {
@@ -284,6 +297,10 @@ footer {
 
   .hero-content p {
     font-size: 1em; /* Réduction du texte */
+  }
+
+  .section img {
+    width: 60%;
   }
 
   .section {
